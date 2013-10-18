@@ -36,7 +36,7 @@ $products = {
 		name     : 'Senna',
 		tag      : 'Creative',
 		img      : 'http://3.s3.envato.com/files/59882936/01_Teaser.__large_preview.png',
-		url      : 'http://pixelgrade.com/demos/senna/',
+		url      : 'http://pixelgrade.com/demos/senna/demo-chooser/',
 		purchase : 'http://themeforest.net/item/senna-responsive-portfolio-blog-wordpress-theme/4609270?WT.ac=portfolio_item&WT.seg_1=portfolio_item&WT.z_author=pixelgrade',
 		tooltip  : 'The wordpress theme that all creatives have been waiting for'
 	},
