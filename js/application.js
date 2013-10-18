@@ -7,10 +7,43 @@
 // Global "use strict", wrap it up in functions if you can't deal with it...
 "use strict";
 
+/* --- DETECT PLATFORM --- */
+
+function platformDetect(){
+		var phone, touch, ltie9, lteie9, wh, ww, dh, ar, fonts;
+    $.support.touch = 'ontouchend' in document;
+    var navUA = navigator.userAgent.toLowerCase(),
+    navPlat = navigator.platform.toLowerCase();
+    
+    var isiPhone = navPlat.indexOf("iphone"),
+    isiPod = navPlat.indexOf("ipod"),
+    isAndroidPhone = navPlat.indexOf("android"),
+    safari = (navUA.indexOf('safari') != -1 && navUA.indexOf('chrome') == -1) ? true : false,
+    svgSupport = (window.SVGAngle) ? true : false,
+    svgSupportAlt = (document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#BasicStructure", "1.1")) ? true : false,
+    ff3x = (/gecko/i.test(navUA) && /rv:1.9/i.test(navUA)) ? true : false;
+    
+    phone = (isiPhone > -1 || isiPod > -1 || isAndroidPhone > -1) ? true : false;
+    touch = $.support.touch ? true : false;
+    ltie9 = $.support.leadingWhitespace ? false : true;
+    lteie9 = typeof window.atob === 'undefined' ? true : false;
+
+    var $bod = $('body');
+    
+    if (touch) {$bod.addClass('touch');}
+    if (safari) $bod.addClass('safari');
+    if (phone) $bod.addClass('phone'); 
+
+    //Close the bar on mobile devices
+    if($bod.hasClass('touch') || $bod.hasClass('phone')) {
+    			top.location.replace( $products[ $current_product ].url );
+    }
+};
+
 // Insert products to carousel
 $.each( $products, function( key, object ) {
 
-	if ( 'tooltip' in object ) {
+	if ( 'tooltip' in object ) { 
 
 		var tooltip = 'title="' + object.tooltip.replace( /"/g, '\'' ) + '"';
 
@@ -26,7 +59,7 @@ $.each( $products, function( key, object ) {
 
 });
 
-// Close bar on click
+// Purchase bar on click
 $( '.purchase-btn' ).click( function() {
 
 	if ( $current_product in $products ) {
@@ -40,7 +73,7 @@ $( '.purchase-btn' ).click( function() {
 });
 
 // Bail out if mobile, it does not behave good, damn idevices...
-if ( jQuery.browser.mobile ) {
+if ( jQuery.browser.mobile || $('body').hasClass('touch') ) {
 
 	if ( $current_product in $products ) {
 
@@ -50,7 +83,7 @@ if ( jQuery.browser.mobile ) {
 
 }
 
-// Purchase btn on click
+// Close btn on click
 $( '.remove-btn' ).click( function() {
 
 	if ( $current_product in $products ) {
@@ -161,8 +194,9 @@ $( '.product-switcher a' ).on( 'click', function() {
 
 // Start the application
 $( document ).ready( function() {
-
+	
 	$current_product = location.hash.replace('#', '');
+
 
 	if ( ! ( $current_product in $products ) || $current_product === '' ) {
 
@@ -190,6 +224,8 @@ $( document ).ready( function() {
 		placement : 'auto bottom',
 		trigger   : 'hover'
 	});
+
+	 platformDetect();
 
 });
 
