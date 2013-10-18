@@ -21,7 +21,7 @@ $.each( $products, function( key, object ) {
 	}
 
 	$( '.products-list' ).append(
-		'<a class="product pull-left" data-id="' + key + '" ' + tooltip + '><img src="' + object.img + '" alt="' + object.name + '" width="236" height="120"><span class="title">' + object.name + '</span><span class="badge">' + object.tag + '</span></a>'
+		'<a class="product pull-left" data-product="'+object.name+'" data-id="' + key + '" ' + tooltip + '><img src="' + object.img + '" alt="' + object.name + '" width="236" height="120"><span class="title">' + object.name + '</span><span class="badge">' + object.tag + '</span></a>'
 	);
 
 });
@@ -159,13 +159,6 @@ $( '.product-switcher a' ).on( 'click', function() {
 
 });
 
-// Hide preloader on iframe load
-$( '.product-iframe' ).load( function() {
-
-	$( '.preloader, .preloading-icon' ).fadeOut( 400 );
-
-});
-
 // Start the application
 $( document ).ready( function() {
 
@@ -186,8 +179,8 @@ $( document ).ready( function() {
 	}
 
 	$( '.product-switcher a' ).html( 
-		$products[ $current_product ].name + ' <span class="badge">' + $products[ $current_product ].tag + '</span>'
-	);
+		$products[ $current_product ].name + ' <span class="badge">' + $products[ $current_product ].tag + '</span><i class="icon-angle-down"></i>'
+	).attr("data-product", $products[ $current_product ].name);
 
 	$( '.product-iframe' ).attr( 'src', $products[ $current_product ].url );
 
@@ -208,17 +201,9 @@ $( '.product' ).click( function() {
 
 		$( 'body' ).toggleClass( 'toggle' );
 
-		$( '.preloader, .preloading-icon' ).fadeIn( 400 );
-
-		$( '.product-iframe' ).load( function() {
-
-			$( '.preloader, .preloading-icon' ).fadeOut( 400 );
-
-		});
-
 		$( '.product-switcher a' ).html( 
-			$products[ $current_product ].name + ' <span class="badge">' + $products[ $current_product ].tag + '</span>'
-		);
+			$products[ $current_product ].name + ' <span class="badge">' + $products[ $current_product ].tag + '</span><i class="icon-angle-down"></i>'
+		).attr("data-product", $products[ $current_product ].name);
 
 		$( '.product-iframe' ).attr( 'src', $products[ $current_product ].url );
 

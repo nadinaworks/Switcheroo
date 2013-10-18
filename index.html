@@ -10,18 +10,15 @@
 	
 	<!-- Css -->
 
-	<!--
-	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<link href="css/template.css" rel="stylesheet" media="screen">
-	-->
+	<!-- <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"> -->
 
 	<script>if ( top !== self ) top.location.replace( self.location.href );// Hey, don't iframe my iframe!</script>
 
-	<link href="css/template.min.css" rel="stylesheet" media="screen">
 
-	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,300' rel='stylesheet' type='text/css'>
+	<link href="css/style.css" rel="stylesheet" media="screen">
 	
 	<!--[if lt IE 9]>
 		<script>/*@cc_on'abbr article aside audio canvas details figcaption figure footer header hgroup mark meter nav output progress section summary subline time video'.replace(/\w+/g,function(n){document.createElement(n)})@*/</script>
@@ -34,43 +31,32 @@
 <!-- Header -->
 <header class="switcher-bar clearfix">
 
-	<!-- Logo -->
-	<div class="logo textual pull-left">
-		<a href="#" title="Switcher">
-			Switcheroo
+	<!-- Product Switcher -->
+	<div class="product-switcher pull-left">
+		<a data-product="default" href="#" title="Select a Product">
+			Select a Product <span>+</span>
+			<i class="icon-angle-down"></i>
 		</a>
 	</div>
 
-	<!-- Product Switcher -->
-	<div class="product-switcher pull-left">
+	<!-- Product Options -->
+	<!-- <div class="product-options pull-left">
 		<a href="#" title="Select a Product">
-			Select a Product <span>+</span>
+			RTL <span>+</span>
 		</a>
-	</div>
+	</div> -->
 
 	<!-- Bar Remove Button -->
 	<div class="remove-btn header-btn pull-right">
-		<a href="#" title="Close this bar" class="icon-remove"></a>
+		<a href="#" title="Close this bar" class="icon-remove-sign"></a>
 	</div>
 
 	<!-- Purchase Button -->
 	<div class="purchase-btn header-btn pull-right">
-		<a href="#" title="Purchase" class="icon-shopping-cart"></a>
-	</div>
-
-	<!-- Mobile Button -->
-	<div class="mobile-btn header-btn pull-right hidden-xs">
-		<a href="#" title="Smartphone View" class="icon-mobile-phone"></a>
-	</div>
-
-	<!-- Tablet Button -->
-	<div class="tablet-btn header-btn pull-right hidden-xs">
-		<a href="#" title="Tablet View" class="icon-tablet"></a>
-	</div>
-
-	<!-- Desktop Button -->
-	<div class="desktop-btn header-btn pull-right hidden-xs">
-		<a href="#" title="Desktop View" class="icon-desktop"></a>
+		<a href="#" title="Purchase">
+			<i class="icon-shopping-cart"></i>
+			<span>Get This Theme</span>
+		</a>
 	</div>
 
 </header>
@@ -99,19 +85,16 @@
 <div class="preloading-icon"><i class="icon-bolt"></i></div>
 
 <!-- Javascript -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="js/products.js"></script>
 
-<!--
 <script src="js/libs/detectmobilebrowser.js"></script>
 <script src="js/libs/jquery.mousewheel.js"></script>
 <script src="js/libs/bootstrap.min.js"></script>
 <script src="js/libs/jquery.carouFredSel-6.2.1-packed.js"></script>
 <script src="js/application.js"></script>
--->
 
-<script src="js/application.min.js"></script>
-
+<!-- <script src="js/application.min.js"></script> -->
 	
 </body>
 

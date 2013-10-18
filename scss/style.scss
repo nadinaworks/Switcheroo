@@ -1,0 +1,296 @@
+@charset "UTF-8";
+@import "vars";
+@import "bootstrap.min"; 
+
+/*------------------------------------------------------*\
+               PIXELGRADE THEME SWITCHER BAR
+\*------------------------------------------------------*/
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+html, body {
+  min-height: 100%; 
+  overflow: hidden;
+}
+
+a {
+  outline:none;
+}
+
+.switcher-bar {
+  background-color:$bar_color;
+  border-bottom: 1px solid $dark;
+  // max-height: 60px;
+  height:35px;
+  position: relative;
+  z-index: 22;
+}
+
+.pull-left {
+  float: left!important;
+}
+.pull-right {
+  float: right!important;
+}
+
+
+
+.product-switcher {
+
+  a {
+    color: $light;
+    border-right:1px solid $dark;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 35px;
+    padding: 0px 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    display: block;
+    width:225px;
+
+    -webkit-transition: all .20s;
+    -moz-transition: all .20s;
+    -o-transition: all .20s;
+    -ms-transition: all .20s;
+    transition: all .20s;
+
+    span {
+      font-family: sans-serif;
+    }
+
+    .badge {
+      color: $dark;
+      vertical-align:middle;
+      margin-left:6px;
+      top: -2px;
+      position: relative;
+
+    }
+
+    i {
+      float: right;
+      line-height: 35px;
+    }
+  }
+
+  &:hover {
+    background-color:$dark;
+  }
+}
+
+// Badge
+
+.badge {
+  background: #fcff00;
+  padding: 4px 7px 2px;
+  border-radius: 2px;
+  font-size: 9px;
+  font-weight: 300;
+  text-transform:uppercase;
+  font-family: sans-serif;
+}
+
+.header-btn {
+  a {
+    color:$light;
+    text-transform:uppercase;
+    font-size:14px;
+    line-height:35px;
+    border-left:1px solid $dark;
+    padding: 0px 18px;
+    display:inline-block;
+    -webkit-transition: all .15s;
+    -moz-transition: all .15s;
+    -o-transition: all .15s;
+    -ms-transition: all .15s;
+    transition: all .15s;
+
+    i {
+      font-size:17px;
+      margin-right:6px;
+    }
+
+    &.icon-remove-sign {
+      font-size:22px;
+      color:$dark;
+      padding: 0 10px;
+    }
+
+    &:hover {
+      color:#fff;
+      background-color:$dark;
+      text-decoration:none;
+    }
+  }
+}
+
+
+/*------------------------------------------------------*\
+              PRODUCTS LIST
+\*------------------------------------------------------*/
+
+.switcher-body {
+  background: #0d0d0d;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  z-index: 20;
+}
+
+.toggle .switcher-body {
+  // border-bottom: 1px solid #333333;
+  // border-top: 1px solid #333333;
+  height: 184px;
+  padding: 10px 0;
+}
+
+.products-wrapper {
+  margin: 5px 50px;
+}
+
+
+.products-list {
+  max-height: 152px;
+  overflow: hidden;
+}
+
+.products-prev,
+.products-next {
+  display: block !important;
+  height: 60px;
+  left: 0;
+  padding: 0;
+  position: absolute;
+  text-decoration: none;
+  top: 63px;
+  visibility: visible !important;
+  width: 60px;
+  z-index: 999;
+}
+
+.products-next {
+  left: auto;
+  right: 0;
+}
+
+.products-prev:before,
+.products-next:before {
+  color: #fff;
+  font-size: 30px;
+  margin: 12px 15px;
+}
+
+.products-prev:hover,
+.products-next:hover {
+  text-decoration: none;
+}
+
+.product {
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  height: 150px;
+  margin: 0 10px;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none !important;
+  width: 238px;
+}
+
+.product img {
+  display: block;
+}
+
+.product .title {
+  background: #fff;
+  color: #666;
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  max-width: 236px;
+  overflow: hidden;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.product .badge {
+  background: #E66346;
+  // border: 1px solid #C94F33;
+  // border-radius: 2px;
+  // color: #fff;
+  // font-size: 10px;
+  // font-weight: 300;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.tooltip-inner {
+  max-width: 238px;
+}
+
+.tooltip-inner img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+
+/*------------------------------------------------------*\
+              PRODUCT IFRAME
+\*------------------------------------------------------*/
+
+.product-iframe {
+  display: block !important;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+  -webkit-transform: translateZ(0);
+}
+
+
+
+
+
+/*------------------------------------------------------*\
+              THEMES COLORS
+\*------------------------------------------------------*/
+.badge {
+  a[data-product="Lens"] & {
+    background-color:#fcff00;
+    color:$dark;
+  }
+  a[data-product="Cityhub"] & {
+    background-color:#ee3430;
+    color:#fff;
+  }
+  a[data-product="Fuse"] & {
+    background-color:#0088ff;
+    color:#fff;
+  }
+  a[data-product="Senna"] & {
+    background-color:#01a279;
+    color:#fff;
+  }
+  a[data-product="Bliv"] & {
+    background-color:#d72b2b;
+    color:#fff;
+  }
+
+}
