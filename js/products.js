@@ -1,5 +1,5 @@
 var $products,
-	$current_product = 'visia';
+	$current_product = 'Lens';
 
 // List all the products here
 
