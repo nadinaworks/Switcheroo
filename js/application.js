@@ -261,11 +261,20 @@ $( document ).ready( function() {
 	//Switcher
 	$( '.lens_rtl a' ).click( function(e) {
 		e.preventDefault();
-		
+
 		$( '.lens_rtl a' ).toggleClass('active');
 
-		$( '.product-iframe' ).attr( 'src', $(this).attr('href') );
-
-		$(".product-iframe").contents().find("body").toggleClass("header-inverse");
+		$('.product-iframe').attr( 'src', $(this).attr('href') );
+		
 	});
-});
+
+	//Header Inverse
+	$("input#sidebar-inverse").change(function(e) {
+	        if ($(this).is(':checked')) {
+	            $('.product-iframe').contents().find('body').addClass('header-inverse');
+	        } else {
+	        	$('.product-iframe').contents().find('body').removeClass('header-inverse');
+	        }   
+	})
+
+})
