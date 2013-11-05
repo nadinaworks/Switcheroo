@@ -261,8 +261,11 @@ $( document ).ready( function() {
 	//Switcher
 	$( '.lens_rtl a' ).click( function(e) {
 		e.preventDefault();
+		
 		$( '.lens_rtl a' ).toggleClass('active');
-		// $( '.product-iframe' ).attr( 'src', $(this).attr('href') );
-		$(".product-iframe").contents().find("html").toggleClass("merge");
+
+		$( '.product-iframe' ).attr( 'src', $(this).attr('href') );
+
+		$(".product-iframe").contents().find("body").toggleClass("header-inverse");
 	});
 });

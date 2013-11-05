@@ -12,7 +12,7 @@ $products = {
 		url      : 'http://pixelgrade.com/demos/lens/',
 		purchase : 'http://themeforest.net/item/lens-an-enjoyable-photography-wordpress-theme/5713452?WT.ac=follow&WT.seg_1=follow&WT.z_author=pixelgrade',
 		tooltip  : 'A pure yet intriguing visual experience for photographers',
-		options  : '<li class="lens_rtl option_link"><a class="active" href="http://pixelgrade.com/demos/lens/?d=rtl">Switch to RTL</a><a class="" href="http://pixelgrade.com/demos/lens/?d=ltr">Switch to LTR</a></li><li class="lens_header option_checkbox"><label for=first-name>Header Inverse</label><input type=checkbox class="checkbox" id=first-name></li>'
+		options  : '<li class="lens_rtl option_link"><a class="active" href="http://pixelgrade.com/demos/lens/?d=rtl">Switch to RTL</a><a class="" href="http://pixelgrade.com/demos/lens/?d=ltr">Switch to LTR</a></li><li class="lens_header option_checkbox"><label for=first-name>Sidebar Inverse</label><input type=checkbox class="checkbox" id=first-name></li>'
 	},
 
 	cityhub : {
