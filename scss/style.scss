@@ -35,18 +35,26 @@ a {
   float: right!important;
 }
 
-
-
-.product-switcher {
-
-  a {
+%link_style {
     color: $light;
     border-right:1px solid $dark;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 35px;
     padding: 0px 18px;
     text-decoration: none;
+
+
+    &:hover {
+      background-color:$dark;
+    }
+}
+
+.product-switcher {
+
+  a {
+    @extend %link_style;
+     font-size: 16px;
     text-transform: uppercase;
     position: relative;
     display: block;
@@ -75,10 +83,6 @@ a {
       float: right;
       line-height: 35px;
     }
-  }
-
-  &:hover {
-    background-color:$dark;
   }
 }
 
@@ -124,6 +128,124 @@ a {
       color:#fff;
       background-color:$dark;
       text-decoration:none;
+    }
+  }
+}
+
+
+
+
+
+/*------------------------------------------------------*\
+              PRODUCTS OPTIONS
+\*------------------------------------------------------*/
+
+.product-options {
+  ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+    li {
+      float:left;
+      position:relative;
+    }
+  }
+
+  a {
+    @extend %link_style;
+
+    &:hover {
+      text-decoration:none;
+    }
+  }
+}
+
+/*
+* Options link
+*/
+.option_link {
+  width:130px;
+  height:35px;
+  a {
+    position:absolute;
+    top:0;
+    left:0;
+    display:none;
+
+    &.active {
+      display:block;
+    }
+  }
+}
+
+/*
+* Options Checkbox
+*/
+.option_checkbox {
+  width:250px;
+
+  label {
+    @extend %link_style;
+    border-right:none;
+    cursor:pointer;
+
+    &:hover {
+      background:none;
+    }
+  }
+}
+
+//Checkbox
+$border-color: $dark;
+$_u      : 18px;
+input.checkbox {
+  border:1px solid $border-color !important;
+  position:relative;
+  width:$_u;
+  height:$_u;
+  cursor:pointer;
+  margin-top:-3px;
+  margin-right: 6px !important;
+  top:3px;
+
+  &:before {
+    width:$_u;
+    height:$_u;
+    background:$light;
+    border:1px solid $border-color;
+    content: " ";
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+  }
+
+  &:after {
+    opacity: 0;
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 7px;
+    background: transparent;
+    top: 5px;
+    left: 5px;
+    border: 3px solid $bar_color;
+    border-top: none;
+    border-right: none;
+    -webkit-transform: rotate(-45deg);
+  }
+
+  &:hover {
+
+    &:before {
+      background:white;
+      border-color:darken($border-color, 7%);
+    }
+  }
+
+  &:checked {
+    &:after {
+      opacity:1;
     }
   }
 }

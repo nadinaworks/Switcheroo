@@ -1419,14 +1419,21 @@ a {
   float: right !important;
 }
 
-.product-switcher a {
+.product-switcher a, .product-options a, .option_checkbox label {
   color: #bbbbbb;
   border-right: 1px solid #1a1a1a;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 35px;
   padding: 0px 18px;
   text-decoration: none;
+}
+.product-switcher a:hover, .product-options a:hover, .option_checkbox label:hover {
+  background-color: #1a1a1a;
+}
+
+.product-switcher a {
+  font-size: 16px;
   text-transform: uppercase;
   position: relative;
   display: block;
@@ -1450,9 +1457,6 @@ a {
 .product-switcher a i {
   float: right;
   line-height: 35px;
-}
-.product-switcher:hover {
-  background-color: #1a1a1a;
 }
 
 .badge {
@@ -1492,6 +1496,96 @@ a {
   color: #fff;
   background-color: #1a1a1a;
   text-decoration: none;
+}
+
+/*------------------------------------------------------*\
+              PRODUCTS OPTIONS
+\*------------------------------------------------------*/
+.product-options ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.product-options ul li {
+  float: left;
+  position: relative;
+}
+.product-options a:hover {
+  text-decoration: none;
+}
+
+/*
+* Options link
+*/
+.option_link {
+  width: 130px;
+  height: 35px;
+}
+.option_link a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.option_link a.active {
+  display: block;
+}
+
+/*
+* Options Checkbox
+*/
+.option_checkbox {
+  width: 250px;
+}
+.option_checkbox label {
+  border-right: none;
+  cursor: pointer;
+}
+.option_checkbox label:hover {
+  background: none;
+}
+
+input.checkbox {
+  border: 1px solid #1a1a1a !important;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  margin-top: -3px;
+  margin-right: 6px !important;
+  top: 3px;
+}
+input.checkbox:before {
+  width: 18px;
+  height: 18px;
+  background: #bbbbbb;
+  border: 1px solid #1a1a1a;
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+input.checkbox:after {
+  opacity: 0;
+  content: '';
+  position: absolute;
+  width: 9px;
+  height: 7px;
+  background: transparent;
+  top: 5px;
+  left: 5px;
+  border: 3px solid #2d2d2d;
+  border-top: none;
+  border-right: none;
+  -webkit-transform: rotate(-45deg);
+}
+input.checkbox:hover:before {
+  background: white;
+  border-color: #080808;
+}
+input.checkbox:checked:after {
+  opacity: 1;
 }
 
 /*------------------------------------------------------*\

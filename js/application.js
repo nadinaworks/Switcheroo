@@ -212,9 +212,11 @@ $( document ).ready( function() {
 
 	}
 
-	$( '.product-switcher a' ).html( 
+	$('.product-switcher a').html( 
 		$products[ $current_product ].name + ' <span class="badge">' + $products[ $current_product ].tag + '</span><i class="icon-angle-down"></i>'
 	).attr("data-product", $products[ $current_product ].name);
+
+	$( '.product-options ul' ).html($products[ $current_product ].options);
 
 	$( '.product-iframe' ).attr( 'src', $products[ $current_product ].url );
 
@@ -245,8 +247,22 @@ $( '.product' ).click( function() {
 
 		location.hash = '#' + $current_product;
 
+		$( '.product-options ul' ).html($products[ $current_product ].options);
+
 	}
 
 	return false;
 
+});
+
+// Lens options
+$( document ).ready( function() {
+
+	//Switcher
+	$( '.lens_rtl a' ).click( function(e) {
+		e.preventDefault();
+		$( '.lens_rtl a' ).toggleClass('active');
+		// $( '.product-iframe' ).attr( 'src', $(this).attr('href') );
+		$(".product-iframe").contents().find("html").toggleClass("merge");
+	});
 });
