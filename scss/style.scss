@@ -394,6 +394,10 @@ input.checkbox {
               THEMES COLORS
 \*------------------------------------------------------*/
 .badge {
+  a[data-product="Bucket"] & {
+    background-color:#fb4834;
+    color:#fff;
+  }
   a[data-product="Lens"] & {
     background-color:#fcff00;
     color:$dark;

@@ -1,9 +1,19 @@
 var $products,
-	$current_product = 'Lens';
+	$current_product = 'Bucket';
 
 // List all the products here
 
 $products = {
+
+	
+	bucket : {
+		name     : 'Bucket',
+		tag      : 'Magazine',
+		img      : 'http://1.s3.envato.com/files/72593741/00_Bucket_Teaser.__large_preview.jpg',
+		url      : 'http://pixelgrade.com/demos/bucket/',
+		purchase : 'http://themeforest.net/item/bucket-a-digital-magazine-style-wordpress-theme/6107209?WT.ac=new_item&WT.seg_1=new_item&WT.z_author=pixelgrade',
+		tooltip  : 'The indispensable Digital Magazine Theme for people who love to share stuff.',
+	},
 
 	lens : {
 		name     : 'Lens',

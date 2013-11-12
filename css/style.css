@@ -1715,6 +1715,10 @@ input.checkbox:checked:after {
 /*------------------------------------------------------*\
               THEMES COLORS
 \*------------------------------------------------------*/
+a[data-product="Bucket"] .badge {
+  background-color: #fb4834;
+  color: #fff;
+}
 a[data-product="Lens"] .badge {
   background-color: #fcff00;
   color: #1a1a1a;
